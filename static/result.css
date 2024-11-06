@@ -1,0 +1,105 @@
+/* Base styling */
+body {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/707/220/899/gradient-blue-pink-abstract-art-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    animation: backgroundPulse 6s ease-in-out infinite alternate;
+}
+
+/* Result box styling */
+.result-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-out, floatUp 6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow and text animations */
+.result-box h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f8f9fa;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s ease-in-out infinite alternate, slideDown 1.2s ease-out;
+}
+
+.result-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #f1f1f1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Paragraph animation */
+.result-box p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Table and cell styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    animation: fadeIn 1.7s ease-in-out;
+}
+
+.table-bordered td {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #f1f1f1;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.table-bordered td:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes backgroundPulse {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 5px rgba(255, 110, 196, 0.8), 0 0 15px rgba(120, 115, 245, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(255, 110, 196, 1), 0 0 40px rgba(120, 115, 245, 1); }
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

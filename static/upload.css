@@ -1,0 +1,150 @@
+/* Existing imports and base styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #010101;
+  background-image: url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  animation: backgroundFade 5s ease-in-out infinite alternate;
+}
+
+h1 {
+  padding-top: 170px;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: glowText 2s ease-in-out infinite alternate, slideDown 1.5s ease-in-out;
+}
+
+/* Glow animation for the header */
+@keyframes glowText {
+  0% { text-shadow: 0 0 5px rgba(0, 198, 255, 0.8), 0 0 15px rgba(0, 114, 255, 0.8); }
+  100% { text-shadow: 0 0 20px rgba(0, 198, 255, 1), 0 0 40px rgba(0, 114, 255, 1); }
+}
+
+/* Slide down animation for entry */
+@keyframes slideDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Card and button styles */
+.container {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 1s ease-in-out, float 6s ease-in-out infinite;
+}
+
+.animated-card {
+  animation: fadeInUp 1.5s ease-in-out, pulse 2s infinite ease-in-out;
+}
+
+.drop_box {
+  margin-top: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  animation: fadeIn 1.2s ease-in-out, float 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow overlay */
+.drop_box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,123,255,0.3), transparent 70%);
+  animation: rotateGlow 5s linear infinite;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 30px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+  z-index: 10;
+  position: relative; /* Ensures button stays in place */
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+  color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 86, 179, 0.5);
+}
+
+/* Reused and existing animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3); }
+  50% { box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.5); }
+  100% { box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3); }
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes backgroundFade {
+  0% { background-color: #010101; }
+  100% { background-color: #121212; }
+}
